@@ -1,0 +1,16 @@
+---
+- name: downloading artifact from nexus
+  maven_artifact:
+    group_id: in.shan5a6
+    artifact_id: myweb
+    extension: war 
+    version: "{{ artifact_version }}" 
+    username: "{{ nexus_user }}"
+    password: "{{ nexus_password }}"
+    repository_url: 'http://54.163.19.206/repository/app1-artifacts' 
+    dest: /opt/tomcat/webapps/
+
+- name: Restart tomcat
+  systemd:
+    name: tomcat-service
+    state: restarted
