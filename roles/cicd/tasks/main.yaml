@@ -7,7 +7,7 @@
     version: "{{ artifact_version }}" 
     username: "{{ nexus_user }}"
     password: "{{ nexus_password }}"
-    repository_url: 'http://54.163.19.206/repository/app1-artifacts' 
+    repository_url: 'http://54.91.86.97/repository/app1-artifacts' 
     dest: /opt/tomcat/webapps/
 
 - name: Restart tomcat
